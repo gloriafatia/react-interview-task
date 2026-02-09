@@ -1,41 +1,75 @@
-# Flex Business Solutions Tech Test - Inventory Management
+Flex Business Solutions - Inventory Management App
 
-In Flex Business Solutions, we aim to provide excellence and efficiency on all our lines of code in order to support the day-to-day activities of the company using our software solutions. In this task, you will be provided with a simple design of an app, fetching a list of products from an external source and allowing the user to search or filter among the list.
+This project is a React + TypeScript + Vite application for managing job sites and their inventories. It implements a user-friendly interface where you can create job sites, view inventory, search/filter items, and update inventory details.
 
+The UI is based on the Figma design https://www.figma.com/design/uOxY3AiUFaGuxsU9nk0H1O/ReactJs-Test?node-id=451-180&t=LtKxDyHSyQb9mfnS-0
 
-### Tech Test Overview
-We have provided below the Figma link of this task. On the main page, we have a list of job sites with their corresponding status. By clicking the "Create" button we can create other job sites and add them to the list. By clicking to the jobsite name, we are redirected to the inventory dashboard for that particular job site. There, we can update items inside categories by double cliking on each cell where the content of that row will automatically be shown on the modal. Updating any specific column and hitting "Save", the content of the table should be automatically updated.
+Features:
+-Job Sites List
+-View all job sites with their status.
+-Search and filter job sites by name.
+-Create new job sites with associated categories.
+-Inventory Dashboard
+-Click a job site to view its inventory dashboard.
+-Search and filter items by name or category.
+-Update items by double-clicking a table cell, editing details in a modal, and saving changes.
+-Changes automatically update the table in real-time.
 
-[FIGMA] [https://www.figma.com/file/uOxY3AiUFaGuxsU9nk0H1O/ReactJs-Test?node-id=0%3A1]
+-Responsive and Clean UI
+-Fully aligned with the Figma design.
+-Uses reusable components for modals, badges.
+-Local Storage Persistence
 
-We love to see:
-- Functional code
-- Good design
-- Unit testing
+Job sites and inventory items are persisted locally, allowing page reload without losing data.
 
+-Unit Testing
+-Includes basic unit tests for core functionality (adding job sites, updating inventory, searching).
 
-### Notes
-All of you work should take place inside this repository.
+Getting Started
+Prerequisites
 
-You are free to use any packages that would help with this task
+Make sure you have Node.js 18+ and npm installed.
 
-You do not need to add additional security measures as part of this exercise.
-We're interested in how you break down the work and build your solution in a clean, easy-to-use, reusable and testable manner.
+Install dependencies
+npm install
 
+Run the development server
+npm run dev
 
-## Deliverables
-You must follow the Figma design and need to add the functionality of:
-a) Create new job sites with their categories
-c) Search job sites & items on the inventory page
-b) Update items on each category
+The app will be available at http://localhost:5173
+.
 
-**Create a folder inside the repository and include finished screenshots of the app.**
-**Please make sure to update the readme with**:
+Build for production
+npm run build
 
-- How to run your app with all the necessary details
-- Relating to the task please add answers to the following questions;
-    1. How might you make this app more secure?
-    2. How would you make this solution scale to millions of records?
-  
+Run tests
+npm run test
 
-On completion email a link to your repository to your contact at FLEX BUSINESS SOLUTIONS and ensure it is publicly accessible.
+Project Structure
+
+src/
+├─ components/ # Reusable UI components (Modal, Badge)
+├─ data/ # Mock data for job sites and inventory items
+├─ hooks/ # Custom hooks (e.g., useLocalStorage)
+├─ pages/ # Page-level components (JobsiteList, InventoryDashboard)
+├─ types/ # TypeScript type definitions
+└─ test/
+
+Question 1:
+How to Make the App More Secure?
+-Implement authentication and role-based access control (only authorized users can edit inventory).
+-Validate and sanitize all user inputs to prevent XSS or injection attacks.
+-Use HTTPS for all requests in production.
+-Store sensitive data securely (avoid storing in localStorage for production).
+
+Question 2:
+How to Scale to Millions of Records
+-Replace local storage with a backend database (e.g., PostgreSQL, MongoDB) and implement proper API endpoints.
+-Use server-side pagination, filtering, and sorting to avoid rendering large datasets on the client.
+
+Screenshots
+![Screenshot](assets/JobSite.png)
+![Screenshot](assets/JobSiteModal.png)
+![Screenshot](assets/ItemModal.png)
+![Screenshot](assets/JobSiteDetail.png)
+![Screenshot](assets/Categories.png)
